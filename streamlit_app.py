@@ -49,7 +49,7 @@ if username:
             st.write(f"Guessed in {st.session_state.attempts} attempts.")
             st.write(f"Took {duration:.2f} seconds.")
             if st.button("Finish & Return to Menu"):
-                graph_app.invoke({"input": "1", "username": username})
+                
                 log_game(username, "number", True, duration, st.session_state.attempts)
                 for key in ["low", "high", "attempts", "start_time", "finished"]:
                     del st.session_state[key]
@@ -81,7 +81,7 @@ if username:
                 st.session_state.word_success = user_response == "Yes"
                 duration = time.time() - st.session_state.word_start_time
                 attempts = 5
-                graph_app.invoke({"input": "2", "username": username})
+                
                 log_game(username, "word", st.session_state.word_success, duration, attempts)
 
         if st.session_state.word_guess_made:

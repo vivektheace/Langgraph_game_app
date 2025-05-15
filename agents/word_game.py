@@ -61,4 +61,5 @@ def word_game_agent(state: dict) -> str:
         num_attempts=attempts
     )
 
-    return "selector"
+    return {"input": "selector"}
+
